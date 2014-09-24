@@ -15,8 +15,8 @@
 // If the temperature has not increased at the end of that period, the target temperature is set to zero.
 // It can be reset with another M104/M109. This check is also only triggered if the target temperature and the current temperature
 //  differ by at least 2x WATCH_TEMP_INCREASE
-//#define WATCH_TEMP_PERIOD 40000 //40 seconds
-//#define WATCH_TEMP_INCREASE 10  //Heat up at least 10 degree in 20 seconds
+#define WATCH_TEMP_PERIOD 40000 //40 seconds
+#define WATCH_TEMP_INCREASE 10  //Heat up at least 10 degree in 20 seconds
 
 #ifdef PIDTEMP
   // this adds an experimental additional term to the heating power, proportional to the extrusion speed.
@@ -56,7 +56,7 @@
 //These defines help to calibrate the AD595 sensor in case you get wrong temperature measurements.
 //The measured temperature is defined as "actualTemp = (measuredTemp * TEMP_SENSOR_AD595_GAIN) + TEMP_SENSOR_AD595_OFFSET"
 #define TEMP_SENSOR_AD595_OFFSET 0.0
-#define TEMP_SENSOR_AD595_GAIN   1.0
+#define TEMP_SENSOR_AD595_GAIN   2.0
 
 //This is for controlling a fan to cool down the stepper drivers
 //it will turn on when any driver is enabled
@@ -86,7 +86,7 @@
 //=============================Mechanical Settings===========================
 //===========================================================================
 
-#define ENDSTOPS_ONLY_FOR_HOMING // If defined the endstops will only be used for homing
+//#define ENDSTOPS_ONLY_FOR_HOMING // If defined the endstops will only be used for homing
 
 
 //// AUTOSET LOCATIONS OF LIMIT SWITCHES
@@ -274,7 +274,7 @@
 #define DIGIPOT_MOTOR_CURRENT {135,135,135,135,135} // Values 0-255 (RAMBO 135 = ~0.75A, 185 = ~1A)
 
 // uncomment to enable an I2C based DIGIPOT like on the Azteeg X3 Pro
-//#define DIGIPOT_I2C
+#define DIGIPOT_I2C
 // Number of channels available for I2C digipot, For Azteeg X3 Pro we have 8
 #define DIGIPOT_I2C_NUM_CHANNELS 8
 // actual motor currents in Amps, need as many here as DIGIPOT_I2C_NUM_CHANNELS

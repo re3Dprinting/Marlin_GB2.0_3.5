@@ -603,8 +603,8 @@
     #define Y_STEP_PIN         60
     #define Y_DIR_PIN          61
     #define Y_ENABLE_PIN       56
-    #define Y_MIN_PIN          14
-    #define Y_MAX_PIN          15
+    #define Y_MIN_PIN          15 // reversed these two pins in order to allow Y-max to use Y-min
+    #define Y_MAX_PIN          14 // on the Azteeg X3 (ceg)
 
     #define Z_STEP_PIN         46
     #define Z_DIR_PIN          48
@@ -2875,3 +2875,8 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
                         analogInputToDigitalPin(TEMP_0_PIN), analogInputToDigitalPin(TEMP_1_PIN), analogInputToDigitalPin(TEMP_2_PIN), analogInputToDigitalPin(TEMP_BED_PIN) }
 #endif
 
+// Overwrite any if then... worst best way to do this...
+#define TEMP_BED_PIN        11 
+#define BTN_EN1 7	// Patricks change from Aug 2013 (ceg) old value 22 (mjf)
+#define BTN_EN2 22	// Patricks change from Aug 2013 (ceg) old value 7
+#define BTN_ENC 31      // the click // Patricks change from Aug 2013 (ceg)
